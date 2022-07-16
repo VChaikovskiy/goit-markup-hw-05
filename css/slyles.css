@@ -406,6 +406,8 @@ address {
 .product-link {
     display: block;
     text-decoration: none;
+    color: inherit;
+    transition: box-shadow 250ms var(--cubik);
 }
 .product-link:hover {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
@@ -414,6 +416,32 @@ address {
 .product-link:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+
+.product-link-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-link-overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    background-color: rgba(33, 150, 243, 0.9);
+    font-size: 18px;
+    line-height: 1.56;
+    color: var(--color-main);
+    transform: translateY(100%);
+    transition: transform 250ms var(--cubik);
+}
+
+.product-link:hover  .product-link-overlay {
+    transform: translateY(0);
+}
+
 .type {
     font-family: 'Roboto', sans-serif;
         font-size: 16px;
@@ -432,6 +460,7 @@ address {
     font-size: 16px;
     line-height: 1.6;
     letter-spacing: 0.03em;
+    transition: background-color 250ms var(--cubik), color 250ms var(--cubik), box-shadow 250ms var(--cubik);
 }
 .btn {
     background-color: var(--color-blue);
@@ -649,6 +678,7 @@ margin-left: calc(-1 * var(--cardset-gap));
     width: 170px;
     height: 92px;
     margin-left: 30px;
+    transition: border 250ms var(--cubik);
     /* justify-content: center;
     align-items: center; */
 }
@@ -657,8 +687,8 @@ margin-left: calc(-1 * var(--cardset-gap));
 }
 .icon-client-item:hover {
     border: 1px solid var(--color-blue);
-    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
-    border-radius: 4px;
+        border-radius: 4px;
+        transition: border 250ms var(--cubik);
 }
 
 .client-box {
@@ -682,10 +712,13 @@ margin-left: calc(-1 * var(--cardset-gap));
     fill: var(--fill-icon-socials);
     width: 100%;
     height: 100%;
+    transition: fill 250ms var(--cubik); 
 }
 
-.icon-group:hover{
+.icon-group:hover {
     fill: var(--color-blue);
+    transition: fill 250ms var(--cubik);
+    
 }
 
 .footer-container {
